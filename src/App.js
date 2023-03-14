@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {  handleSubmit, useState} from 'react';
+import './components/Home.css';
+import hero from './assets/hero.mp4';
+const Home = () => {
+  
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const Accordion = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [inputValue, setInputValue] = useState('');
+  
+    const handleToggle = () => {
+      setIsExpanded(!isExpanded);
+    };
+  
+    const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(inputValue);
+    };
+ 
+   
+    return (
+      
+      
+      <div>
+        <button className='button-one' onClick={handleToggle}>
+          {isExpanded ? 'Cacher' : 'Comparer'}
+        </button>
+        {isExpanded && (
+          <form onSubmit={handleSubmit}>
+            <label>
+              Entrez le deuxiéme site : 
+            <input type="text" value={inputValue} onChange={handleInputChange} style={{ marginBottom: '10px' }}/>
+            <button className='button-one' onClick={handleToggle}>
+            {isExpanded ? '=>' : 'comparer'}
+            </button>
+
+
+            </label>
+           
+        
+        </form>
+        
+        )}
+      </div>
+      
+    );
+    
+  }
+  
+  return <div className="wrapper">
+  <form onSubmit={handleSubmit}>
+    <fieldset>
+      <label>
+        <p>Site</p>
+        <input name="Site" />
+      </label>
+    </fieldset>
+  </form>
+  <div> <button className="button-one ">Analyser</button></div>
+  
+
+
+
+<div className='main'>
+        <div className="overlay"></div>
+        <video src={hero} autoPlay loop muted />
     </div>
-  );
-}
 
-export default App;
+    <Accordion/>
+</div>
+
+
+}
+export default Home;

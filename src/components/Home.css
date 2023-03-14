@@ -1,0 +1,49 @@
+.button-one {
+    position: relative;
+    background-color: #4444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+    font-size: 0.8rem; /* Réduire la taille de la police */
+    padding: 0.5rem 1rem; /* Réduire la taille de la zone de remplissage */
+  }
+  .button-one:hover {
+letter-spacing: 0.2rem;
+padding: 1.1rem 3.1rem;
+background: var(--clr);
+color:rgb(98, 187, 209);
+  }
+
+
+  .wrapper{
+    padding: 1rem;
+    background-color:transparent;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+
+    
+    
+  }
+
+  .main{
+  object-fit: cover;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+	top: 0;
+  
+	position:absolute;
+	z-index: -1;
+  }
+ 
